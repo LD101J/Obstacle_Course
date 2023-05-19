@@ -5,7 +5,12 @@ using UnityEngine;
 public class Object_Hit : MonoBehaviour
 {
     private void OnCollisionEnter(Collision teros)
-    {
-        Debug.Log("Wall_Hit");
+    { 
+        
+        if(teros.gameObject.tag == "Player")
+        {
+            GetComponent<MeshRenderer>().material.color = Color.cyan;
+            gameObject.tag = "Hit";
+        }
     }
 }
